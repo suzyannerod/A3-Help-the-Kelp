@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <title>Help The Kelp</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/themes/light.css" />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/shoelace-autoloader.js"
+    ></script>
   </head>
 
   <body>
@@ -32,20 +38,41 @@
       <header>
         <nav class="navbar">
           <ul>
-            <li>
-              <a href="#home">Home</a>
+            <li class="homebutton">
+              <img src="images/bean.png" alt="uni logo" />
+              <a href="#helpthekelp">Help The Kelp</a>
             </li>
             <li>
               <a href="#problem">The Problem</a>
             </li>
-            <li>
-              <a href="#solutions">Solutions</a>
-            </li>
+            <sl-dropdown>
+              <sl-button class="dropdown" slot="trigger" caret>Solutions</sl-button>
+              <sl-menu>
+                <sl-menu-item>Fishing</sl-menu-item>
+                <sl-menu-item>Predators</sl-menu-item>
+                <sl-menu-item>Diving</sl-menu-item>
+                <sl-menu-item>Safety</sl-menu-item>
+                <sl-menu-item>Catch & Cook</sl-menu-item>
+                <sl-menu-item>Recipes</sl-menu-item>
+                <sl-menu-item>Processing</sl-menu-item>
+                <sl-menu-item>Youtube</sl-menu-item>
+                <sl-divider></sl-divider>
+              </sl-menu>
+            </sl-dropdown>
+
             <li>
               <a href="#gallery">Gallery</a>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <sl-dropdown>
+                <sl-button class="dropdown" slot="trigger" caret>Contact</sl-button>
+                <sl-menu>
+                  <sl-menu-item>Eat</sl-menu-item>
+                  <sl-menu-item>Catch</sl-menu-item>
+                  <sl-menu-item>Support</sl-menu-item>
+                  <sl-divider></sl-divider>
+                </sl-menu>
+              </sl-dropdown>
             </li>
           </ul>
         </nav>
@@ -58,33 +85,48 @@
           <p>Learn how sea urchin overpopulation is affecting kelp forests and what you can do to help.</p>
         </div>
       </section>
+
       <!-- Problem Section -->
-      <section id="problem" class="section">
-        <div class="content">
+      <!-- <section id="problem" class="section">
+        <div class="content"> -->
+      <section id="problem" class="section problem-section">
+        <img src="images/kelpcluster.webp" alt="Kelp Cluster" class="problem-background" />
+        <div class="problem-card">
           <h2>The Problem</h2>
           <p>
-            Sea urchins are overtaking kelp forests, creating a "purple carpet" on the ocean floor. This threatens
-            marine ecosystems, leading to a decline in biodiversity.
+            The sea urchins are consuming too much of the kelp forests and destroying the ecosystem. Uni can live for
+            days or even weeks without needing to eat, however, they reproduce in mass and they have taken over the
+            ocean floor, creating what's known as a “purple carpet”. Since 2014, 95 percent of the kelp have vanished
+            across a large part of Northern California, most of it bull kelp.
           </p>
           <p>
-            Kelp forests are crucial habitats for many marine species, and without them, the entire ecosystem is at
-            risk.
+            Why are sea urchins bad for the Kelp Forests? Kelp forests provide a crucial ecosystem for a broad range of
+            other marine life and animals, so their demise threatens the ecology across the entire stretch of California
+            coast. The kelp's abrupt decline is being driven by warming waters, and it's a case of how climate change is
+            helping push already-stressed ecosystems over the edge. The uni eat at the base of the kelp stems which
+            inhabit the many sea creatures that lay their eggs in the kelp leaves. Without kelp forests, fish and other
+            predators can't reproduce to control the uni population and these creatures can't maintain their own
+            population.
           </p>
         </div>
       </section>
+      <!-- </section> -->
 
       <!-- Solutions Section -->
-      <section id="solutions" class="section">
+      <section id="solutions" class="section" class="solutions-section">
         <div class="content">
+          <div class="solutions-heading">
           <h2>Solutions</h2>
           <p>
-            One of the most effective solutions is to harvest and consume sea urchins. By reducing their numbers, we can
-            help kelp forests recover.
+              One of the most effective solutions is to harvest and consume sea urchins. By reducing their numbers, we
+              can help kelp forests recover.
           </p>
           <p>
             Learn how you can participate in sea urchin harvesting events, try delicious recipes, and support marine
             conservation efforts.
           </p>
+          </div>
+
           <div class="solutions-container">
             <div class="solutions-columns">
               <div class="solutions-icon" onclick="showSolutionTop('fishing')">
@@ -130,21 +172,27 @@
                 <img src="images/unipredator.jpg" alt="Sea otter" />
               </div>
             </div>
-            <div class="solutions-main" id="solution-diving" hidden>
+
+            <div class="solutions-main solutions-diving" id="solution-diving" hidden>
+              <div>
               <h2>Diving</h2>
               <p>What are the solutions to this problem?</p>
               <p>
                 The main solution for the uni overgrowth is actually just eating them. Although a solution can be
-                introducing predators, raising awareness about sea urchins and encouraging locals in the area to harvest
-                uni themselves would help reduce the uni numbers significantly. Donating money to organisations like
-                Giant Giant Kelp Restoration Project (g2kr) and supporting Divers from Reef Check California can involve
-                those who don't want to or can't participate with uni harvesting.
+                  introducing predators, raising awareness about sea urchins and encouraging locals in the area to
+                  harvest uni themselves would help reduce the uni numbers significantly. Donating money to
+                  organisations like Giant Giant Kelp Restoration Project (g2kr) and supporting Divers from Reef Check
+                  California can involve those who don't want to or can't participate with uni harvesting.
               </p>
               <button onclick="window.location.href='https://diving.org'">Visit Diving.org</button>
-              <div class="solutions-image">
+              </div>
+              <div>
+                <div class="solutions-image-diving">
                 <img src="images/unidiving.jpg" alt="One guy diving for uni" />
+                </div>
               </div>
             </div>
+
             <div class="solutions-main" id="solution-safety" hidden>
               <h2>Safety</h2>
               <p>What are the solutions to this problem?</p>
