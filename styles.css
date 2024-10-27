@@ -27,7 +27,7 @@ body {
 /* Navigation Bar Styling */
 .navbar {
   background-color: #004c60;
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: center;
 }
 
@@ -68,10 +68,82 @@ body {
   text-align: center;
 }
 
-.section:nth-child(even) {
+/* .section:nth-child(even) {
   background-color: #e6e6fa;
   z-index: -40;
 } */
+
+/* Home Section  */
+/* .interactive-page {
+
+} */
+
+.background-image img {
+  width: 100%;
+  display: block;
+  z-index: -10;
+}
+.creatures img {
+  position: absolute;
+  width: 100%;
+}
+.fish {
+  top: 25%;
+  left: 0;
+}
+.bullkelp {
+  top: 16%;
+  left: 0;
+  width: 50% !important;
+}
+
+.leftkelp {
+  top: 12%;
+  right: 0%;
+  width: 39% !important;
+}
+
+.oceanfloor {
+  top: 73.5%;
+  left: 0%;
+  width: 100% !important;
+}
+
+.wave {
+  top: 10%;
+  left: 0%;
+  width: 100% !important;
+}
+.otter {
+  top: 10%;
+  left: 0%;
+  width: 100% !important;
+  z-index: 10;
+}
+.starfish {
+  top: 89.1%;
+  left: 0%;
+  width: 42% !important;
+}
+
+.stick {
+  top: 38.6%;
+  left: 70%;
+  width: 24% !important;
+}
+
+.bulb {
+  top: 10%;
+  left: 1%;
+  width: 30% !important;
+  z-index: 0;
+}
+
+.stick2 {
+  top: 49.6%;
+  left: 37%;
+  width: 11% !important;
+}
 
 /* Problem Section Styling */
 .problem-section {
