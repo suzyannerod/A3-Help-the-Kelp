@@ -192,10 +192,77 @@ contactForm.addEventListener("submit", (event) => {
 
 //pop up//
 
-popup1 = document.getElementById("popup1");
-popupbutton1 = document.getElementById("popupbutton1");
-popupbutton1.addEventListener("click", () => {
-  popup1.active = !popup1.active;
+// popup1 = document.getElementById("popup1");
+// popupbutton1 = document.getElementById("popupbutton1");
+// popupbutton1.addEventListener("click", () => {
+//   popup1.active = !popup1.active;
+// });
+
+// document.addEventListener("DOMContentLoaded", (event) => {
+//   gsap.registerPlugin(ScrollTrigger);
+// });
+
+// pop up toggle
+//kelp button
+const popupkelp = document.getElementById("popupkelp");
+const popupbuttonkelp = document.getElementById("popupbuttonkelp");
+const indicatorkelp = document.getElementById("indicatorkelp");
+
+popupbuttonkelp.addEventListener("click", () => {
+  popupkelp.active = !popupkelp.active;
+
+  let color = getComputedStyle(popupbuttonkelp).getPropertyValue("color");
+  let backgroundColor = getComputedStyle(popupbuttonkelp).getPropertyValue("background-color");
+
+  popupbuttonkelp.style.backgroundColor = color;
+  popupbuttonkelp.style.color = backgroundColor;
+  indicatorkelp.style.backgroundColor = backgroundColor;
+});
+
+//otter button
+const popupotter = document.getElementById("popupotter");
+const popupbuttonotter = document.getElementById("popupbuttonotter");
+const indicatorotter = document.getElementById("indicatorotter");
+
+popupbuttonotter.addEventListener("click", () => {
+  popupotter.active = !popupotter.active;
+
+  let color = getComputedStyle(popupbuttonotter).getPropertyValue("color");
+  let backgroundColor = getComputedStyle(popupbuttonotter).getPropertyValue("background-color");
+
+  popupbuttonotter.style.backgroundColor = color;
+  popupbuttonotter.style.color = backgroundColor;
+  indicatorotter.style.backgroundColor = backgroundColor;
+});
+//uni button
+const popupuni = document.getElementById("popupuni");
+const popupbuttonuni = document.getElementById("popupbuttonuni");
+const indicatoruni = document.getElementById("indicatoruni");
+
+popupbuttonuni.addEventListener("click", () => {
+  popupuni.active = !popupuni.active;
+
+  let color = getComputedStyle(popupbuttonuni).getPropertyValue("color");
+  let backgroundColor = getComputedStyle(popupbuttonuni).getPropertyValue("background-color");
+
+  popupbuttonuni.style.backgroundColor = color;
+  popupbuttonuni.style.color = backgroundColor;
+  indicatoruni.style.backgroundColor = backgroundColor;
+});
+//starfish
+const popupstarfish = document.getElementById("popupstarfish");
+const popupbuttonstarfish = document.getElementById("popupbuttonstarfish");
+const indicatorstarfish = document.getElementById("indicatorstarfish");
+
+popupbuttonstarfish.addEventListener("click", () => {
+  popupstarfish.active = !popupstarfish.active;
+
+  let color = getComputedStyle(popupbuttonstarfish).getPropertyValue("color");
+  let backgroundColor = getComputedStyle(popupbuttonstarfish).getPropertyValue("background-color");
+
+  popupbuttonstarfish.style.backgroundColor = color;
+  popupbuttonstarfish.style.color = backgroundColor;
+  indicatorstarfish.style.backgroundColor = backgroundColor;
 });
 
 document.addEventListener("DOMContentLoaded", (event) => {

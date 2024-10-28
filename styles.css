@@ -151,20 +151,90 @@ body {
 }
 
 .popups {
+  z-index: 1001;
+}
+
+.popup-wrapper-kelp {
   position: absolute;
-  top: 15%;
-  left: 10%;
+  top: 18%;
+  left: 4.5%;
+}
+
+.popup-wrapper-otter {
+  position: absolute;
+  top: 37%;
+  left: 65%;
+  /* z-index: 1003; */
+  /* it doesnt work */
+}
+
+.popup-wrapper-uni {
+  position: absolute;
+  top: 75%;
+  left: 45%;
+}
+
+.popup-wrapper-starfish {
+  position: absolute;
+  top: 90%;
+  left: 23%;
+}
+/* want it to pop upwards */
+
+.styled-popup-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #032e3a;
+  color: #d1e231;
+  border: none;
+  border-radius: 20px; /* circlebutton */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 1002;
+}
+
+.styled-popup-button:hover {
+  background-color: #004c60; /* hover */
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  background-color: #d1e231; /*dot */
+  border-radius: 50%;
 }
 
 .popups .box {
-  width: 110px;
-  height: 300px;
-  background: var(--sl-color-primary-600);
-  border-radius: var(--sl-border-radius-medium);
+  position: relative;
+  top: 20px;
+  width: 300px;
+  background: #032e3a; /*popup box */
+  border-radius: 15px;
+  padding: 1rem;
+  color: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* shadow*/
+  text-align: left;
 }
 
-#popupbutton1 {
-  z-index: 1002;
+.popups .box p {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.learn-more {
+  color: #00bcd4; /*link */
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.learn-more:hover {
+  color: #80deea; /*hover */
 }
 
 /* Problem Section Styling */
