@@ -443,16 +443,35 @@ body {
 }
 
 /* Gallery Styling */
-#gallery {
+/* #gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
-  /* padding-top: 6rem; */
   background-color: #d1e231;
 }
 
 .gallery {
   max-width: 80%;
+}
+*/
+#gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: #d1e231;
+  padding: 2rem 0;
+}
+
+.gallery {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel {
+  width: 90%; /* margin from edge */
+  max-width: 1200px; /* maybe needs limit */
 }
 
 .gallery img {
@@ -467,11 +486,11 @@ body {
 }
 
 .carousel::part(pagination-item) {
-  background-color: #ff0000;
+  background-color: #032e3a;
 }
 
 .carousel::part(pagination-item--active) {
-  background-color: #0000ff;
+  background-color: #ffa07a;
 }
 
 /* Contact Section Styling */

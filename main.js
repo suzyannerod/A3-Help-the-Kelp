@@ -249,7 +249,7 @@ popupbuttonuni.addEventListener("click", () => {
   popupbuttonuni.style.color = backgroundColor;
   indicatoruni.style.backgroundColor = backgroundColor;
 });
-//starfish
+//starfish - want to make this popup upwards
 const popupstarfish = document.getElementById("popupstarfish");
 const popupbuttonstarfish = document.getElementById("popupbuttonstarfish");
 const indicatorstarfish = document.getElementById("indicatorstarfish");
