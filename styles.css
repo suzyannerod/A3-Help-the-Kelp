@@ -145,6 +145,28 @@ body {
   width: 11% !important;
 }
 
+.bubbles {
+  left: 0;
+  z-index: 100;
+}
+
+.popups {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+}
+
+.popups .box {
+  width: 110px;
+  height: 300px;
+  background: var(--sl-color-primary-600);
+  border-radius: var(--sl-border-radius-medium);
+}
+
+#popupbutton1 {
+  z-index: 1002;
+}
+
 /* Problem Section Styling */
 .problem-section {
   position: relative;

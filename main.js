@@ -5,17 +5,162 @@ function showAll() {
   spinner.style.display = "none";
   const everything = document.getElementById("everything");
   everything.hidden = false;
+
+  // creature moevement
+
+  // function floatBullKelp() {
+  //   const float = gsap.timeline({ repeat: -1, yoyo: true });
+  //   float
+  //move top left
+  // .to(".bullkelp", 3, { y: "-=30", x: "+=20", rotation: "-=5", ease: Power1.easeInOut })
+
+  // //move down right
+  // .to(".bullkelp", 2, { y: "+=30", x: "-=20", rotation: "-=5", ease: Power1.easeInOut })
+
+  // .to(".bullkelp", 3, { y: "-=20", rotation: "+=5", ease: Power1.easeInOut })
+
+  // .to(".bullkelp", 3, { y: "+=20", rotation: "+=5", ease: Power1.easeInOut })
+
+  //     .to(".bullkelp", 3, { y: "-=50", ease: Power1.easeInOut })
+  //     .to(".bullkelp", 3, { y: "+=50", ease: Power1.easeInOut })
+  //     .to(".bullkelp", 3, { y: "-=30", ease: Power1.easeInOut })
+  //     .to(".bullkelp", 3, { y: "+=30", ease: Power1.easeInOut })
+  //     .to(".bullkelp", 2, { y: "-=30", ease: Power1.easeInOut })
+  //     .to(".bullkelp", 2, { y: "+=30", ease: Power1.easeInOut });
+
+  //   // TweenLite.to(float, 27, { ease: Power1.easeInOut });
+  // }
+  // floatBullKelp();
+
+  // function floatStick() {
+  //   const float = gsap.timeline({ repeat: -1, yoyo: true });
+  //   float
+  //     .to(".stick", 3, { y: "-=15", ease: Power1.easeInOut })
+  //     .to(".stick", 3, { y: "+=15", ease: Power1.easeInOut })
+  //     .to(".stick", 3, { y: "-=10", ease: Power1.easeInOut })
+  //     .to(".stick", 3, { y: "+=10", ease: Power1.easeInOut })
+  //     .to(".stick", 2, { y: "-=10", ease: Power1.easeInOut })
+  //     .to(".stick", 2, { y: "+=10", ease: Power1.easeInOut });
+  // }
+  // floatStick();
+
+  // function floatStick2() {
+  //   const float = gsap.timeline({ repeat: -1, yoyo: true });
+  //   float
+  //     .to(".stick2", 3, { y: "-=15", ease: Power1.easeInOut })
+  //     .to(".stick2", 3, { y: "+=15", ease: Power1.easeInOut })
+  //     .to(".stick2", 3, { y: "-=10", ease: Power1.easeInOut })
+  //     .to(".stick2", 3, { y: "+=10", ease: Power1.easeInOut })
+  //     .to(".stick2", 2, { y: "-=10", ease: Power1.easeInOut })
+  //     .to(".stick2", 2, { y: "+=10", ease: Power1.easeInOut });
+  // }
+  // floatStick2();
+
+  // function floatOtter() {
+  //   const float = gsap.timeline({ repeat: -1, yoyo: true });
+  //   float
+  //     .to(".otter", 3, { y: "-=25", ease: Power1.easeInOut })
+  //     .to(".otter", 3, { y: "+=25", ease: Power1.easeInOut })
+  //     .to(".otter", 3, { y: "-=15", ease: Power1.easeInOut })
+  //     .to(".otter", 3, { y: "+=15", ease: Power1.easeInOut })
+  //     .to(".otter", 2, { y: "-=15", ease: Power1.easeInOut })
+  //     .to(".otter", 2, { y: "+=15", ease: Power1.easeInOut });
+  // }
+  // floatOtter();
+
+  // Function for vertical float animation (for bullkelp)
+  // same stuff written above but neater
+
+  function floatVertical(target, yMovements) {
+    const float = gsap.timeline({ repeat: -1, yoyo: true });
+
+    yMovements.forEach((movement) => {
+      float.to(target, movement.duration, {
+        y: movement.value,
+        ease: Power1.easeInOut,
+      });
+    });
+  }
+
+  // Function for horizontal float animation (for stick, stick2, and otter)
+  function floatHorizontal(target, xMovements) {
+    const float = gsap.timeline({ repeat: -1, yoyo: true });
+
+    xMovements.forEach((movement) => {
+      float.to(target, movement.duration, {
+        x: movement.value,
+        ease: Power1.easeInOut,
+      });
+    });
+  }
+
+  // Animate .bullkelp (up and down)
+  floatVertical(".bullkelp", [
+    { duration: 3, value: "-=50" },
+    { duration: 3, value: "+=50" },
+    { duration: 3, value: "-=30" },
+    { duration: 3, value: "+=30" },
+    { duration: 2, value: "-=30" },
+    { duration: 2, value: "+=30" },
+  ]);
+
+  // Animate .stick (left and right)
+  floatHorizontal(".stick", [
+    { duration: 3, value: "-=20" },
+    { duration: 3, value: "+=20" },
+    { duration: 3, value: "-=15" },
+    { duration: 3, value: "+=15" },
+    { duration: 2, value: "-=10" },
+    { duration: 2, value: "+=10" },
+  ]);
+
+  // Animate .stick2 (left and right)
+  floatHorizontal(".stick2", [
+    { duration: 3, value: "-=20" },
+    { duration: 3, value: "+=20" },
+    { duration: 3, value: "-=15" },
+    { duration: 3, value: "+=15" },
+    { duration: 2, value: "-=10" },
+    { duration: 2, value: "+=10" },
+  ]);
+
+  // Animate .otter (left and right)
+  floatHorizontal(".otter", [
+    { duration: 3, value: "-=25" },
+    { duration: 3, value: "+=25" },
+    { duration: 3, value: "-=20" },
+    { duration: 3, value: "+=20" },
+    { duration: 2, value: "-=15" },
+    { duration: 2, value: "+=15" },
+  ]);
+
+  //bubbles//
+  var action = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".problem-section",
+        start: "top bottom",
+        end: "+=750",
+        scrub: 0.3,
+      },
+      defaults: { duration: 3, ease: "none" },
+    })
+    .to(".bubbles", 3, { y: "-=1500", ease: Power1.easeInOut });
 }
 
+//loading page// 
 const loadPercent = document.getElementById("load-percent");
 function incrementLoad() {
-  const current = parseInt(loadPercent.textContent);
-  loadPercent.textContent = current + 2;
-  if (current + 2 < 100) {
-    setTimeout(incrementLoad, 28);
-  } else {
-    setTimeout(showAll, 300);
-  }
+  // reverse later
+
+  // const current = parseInt(loadPercent.textContent);
+  // loadPercent.textContent = current + 2;
+  // if (current + 2 < 100) {
+  //   setTimeout(incrementLoad, 28);
+  // } else {
+  //   setTimeout(showAll, 300);
+  // }
+  showAll();
 }
 incrementLoad();
 
@@ -43,4 +188,16 @@ contactForm.addEventListener("submit", (event) => {
   alert("Thank you for your message! We will get back to you soon.");
   contactForm.reset();
   contactForm.classList.remove("active");
+});
+
+//pop up//
+
+popup1 = document.getElementById("popup1");
+popupbutton1 = document.getElementById("popupbutton1");
+popupbutton1.addEventListener("click", () => {
+  popup1.active = !popup1.active;
+});
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  gsap.registerPlugin(ScrollTrigger);
 });
