@@ -14,6 +14,13 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      class="eb-garamond"
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -32,7 +39,16 @@
     </div>
     <div id="everything" hidden>
       <div class="hamburger">
-        <button class="hamburger-btn">
+        <sl-popup id="hamburger-popup" placement="top">
+          <span slot="anchor"></span>
+          <div class="box">
+            <p>Home</p>
+            <p>Problem</p>
+            <p>Solutions</p>
+            <p>Action</p>
+          </div>
+        </sl-popup>
+        <button id="hamburger-btn" class="hamburger-btn">
           <img src="svg/hamburger.svg" />
         </button>
       </div>
@@ -43,37 +59,35 @@
           <ul>
             <li class="homebutton">
               <img src="images/bean.png" alt="uni logo" />
-              <a href="#helpthekelp">Help The Kelp</a>
+              <a class="fontimpact" href="#helpthekelp">Help The Kelp</a>
             </li>
             <li>
-              <a href="#problem">The Problem</a>
+              <a class="fontimpact" href="#problem">The Problem</a>
             </li>
             <sl-dropdown>
               <sl-button class="dropdown" slot="trigger" caret>Solutions</sl-button>
-              <sl-menu>
-                <sl-menu-item>Fishing</sl-menu-item>
-                <sl-menu-item>Predators</sl-menu-item>
-                <sl-menu-item>Diving</sl-menu-item>
-                <sl-menu-item>Safety</sl-menu-item>
-                <sl-menu-item>Catch & Cook</sl-menu-item>
-                <sl-menu-item>Recipes</sl-menu-item>
-                <sl-menu-item>Processing</sl-menu-item>
-                <sl-menu-item>Youtube</sl-menu-item>
-                <sl-divider></sl-divider>
+              <sl-menu class="menu">
+                <sl-menu-item class="menu-item">Fishing</sl-menu-item>
+                <sl-menu-item class="menu-item">Predators</sl-menu-item>
+                <sl-menu-item class="menu-item">Diving</sl-menu-item>
+                <sl-menu-item class="menu-item">Safety</sl-menu-item>
+                <sl-menu-item class="menu-item">Catch & Cook</sl-menu-item>
+                <sl-menu-item class="menu-item">Recipes</sl-menu-item>
+                <sl-menu-item class="menu-item">Processing</sl-menu-item>
+                <sl-menu-item class="menu-item">Youtube</sl-menu-item>
               </sl-menu>
             </sl-dropdown>
 
             <li>
-              <a href="#gallery">Gallery</a>
+              <a class="fontimpact" href="#gallery">Gallery</a>
             </li>
             <li>
               <sl-dropdown>
                 <sl-button class="dropdown" slot="trigger" caret>Contact</sl-button>
-                <sl-menu>
-                  <sl-menu-item>Eat</sl-menu-item>
-                  <sl-menu-item>Catch</sl-menu-item>
-                  <sl-menu-item>Support</sl-menu-item>
-                  <sl-divider></sl-divider>
+                <sl-menu class="menu">
+                  <sl-menu-item class="menu-item">Eat</sl-menu-item>
+                  <sl-menu-item class="menu-item">Catch</sl-menu-item>
+                  <sl-menu-item class="menu-item">Support</sl-menu-item>
                 </sl-menu>
               </sl-dropdown>
             </li>
@@ -84,9 +98,6 @@
       <!-- Home Section -->
       <section id="home" class="section" style="padding: 0px">
         <div class="content">
-          <!-- <h1>Welcome to Help The Kelp</h1>
-          <p>Learn how sea urchin overpopulation is affecting kelp forests and what you can do to help.</p>
-        </div> -->
           <div class="interactive-page">
             <div class="background-image">
               <img src="images/bbackground.jpg" alt="Ocean background" />
@@ -151,7 +162,8 @@
                 </button>
               </div>
               <div class="popup-wrapper-starfish">
-                <sl-popup id="popupstarfish" placement="bottom">
+                <sl-popup id="popupstarfish" placement="top">
+                  <span slot="anchor"></span>
                   <div class="box">
                     <p>
                       Known for its beauty and prodigious growth, giant kelp mingles with bull kelp in some regions, but
@@ -171,28 +183,43 @@
       </section>
 
       <!-- Problem Section -->
-      <!-- <section id="problem" class="section">
-        <div class="content"> -->
       <section id="problem" class="section problem-section">
         <img src="images/kelpcluster.webp" alt="Kelp Cluster" class="problem-background" />
-        <div class="problem-card">
-          <h2>The Problem</h2>
-          <p>
-            The sea urchins are consuming too much of the kelp forests and destroying the ecosystem. Uni can live for
-            days or even weeks without needing to eat, however, they reproduce in mass and they have taken over the
-            ocean floor, creating what's known as a “purple carpet”. Since 2014, 95 percent of the kelp have vanished
-            across a large part of Northern California, most of it bull kelp.
-          </p>
-          <p>
-            Why are sea urchins bad for the Kelp Forests? Kelp forests provide a crucial ecosystem for a broad range of
-            other marine life and animals, so their demise threatens the ecology across the entire stretch of California
-            coast. The kelp's abrupt decline is being driven by warming waters, and it's a case of how climate change is
-            helping push already-stressed ecosystems over the edge. The uni eat at the base of the kelp stems which
-            inhabit the many sea creatures that lay their eggs in the kelp leaves. Without kelp forests, fish and other
-            predators can't reproduce to control the uni population and these creatures can't maintain their own
-            population.
-          </p>
-        </div>
+        <sl-carousel class="problem-carousel" pagination navigation mouse-dragging loop>
+          <sl-carousel-item>
+            <div class="problem-card">
+              <h2 class="fontimpact">The Problem</h2>
+              <p>
+                The sea urchins are consuming too much of the kelp forests and destroying the ecosystem. Uni can live
+                for days or even weeks without needing to eat, however, they reproduce in mass and they have taken over
+                the ocean floor, creating what's known as a “purple carpet”. Since 2014, 95 percent of the kelp have
+                vanished across a large part of Northern California, most of it bull kelp.
+              </p>
+              <p>
+                Kelp forests provide a crucial ecosystem for a broad range of other marine life and animals, so their
+                demise threatens the ecology across the entire stretch of California coast. The kelp's abrupt decline is
+                being driven by warming waters, and it's a case of how climate change is helping push already-stressed
+                ecosystems over the edge.
+              </p>
+            </div>
+          </sl-carousel-item>
+          <sl-carousel-item>
+            <div class="problem-card">
+              <h2 class="fontimpact">Awareness</h2>
+              <p>
+                Raising awareness is key to preserving our precious kelp forests. These underwater giants support
+                diverse marine life and help protect coastal regions. However, they are now under threat from factors
+                like overfishing, pollution, and climate change. By understanding the importance of kelp forests and
+                sharing knowledge, we can encourage actions that lead to sustainable solutions.
+              </p>
+              <p>
+                Every person can make a difference: spread the word, support marine conservation efforts, and be mindful
+                of ocean-friendly practices. Together, we can help safeguard these unique ecosystems for generations to
+                come.
+              </p>
+            </div>
+          </sl-carousel-item>
+        </sl-carousel>
       </section>
       <!-- </section> -->
 
@@ -200,34 +227,34 @@
       <section id="solutions" class="section" class="solutions-section">
         <div class="content">
           <div class="solutions-heading">
-          <h2>Solutions</h2>
-          <p>
+            <h2 class="fontimpact">Solutions</h2>
+            <p>
               One of the most effective solutions is to harvest and consume sea urchins. By reducing their numbers, we
               can help kelp forests recover.
-          </p>
-          <p>
-            Learn how you can participate in sea urchin harvesting events, try delicious recipes, and support marine
-            conservation efforts.
-          </p>
+            </p>
+            <p>
+              Learn how you can participate in sea urchin harvesting events, try delicious recipes, and support marine
+              conservation efforts.
+            </p>
           </div>
 
           <div class="solutions-container">
             <div class="solutions-columns">
               <div class="solutions-icon" onclick="showSolutionTop('fishing')">
-                <p>Fishing</p>
+                <p class="fontimpact">Fishing</p>
               </div>
               <div class="solutions-icon" onclick="showSolutionTop('predators')">
-                <p>Predators</p>
+                <p class="fontimpact">Predators</p>
               </div>
               <div class="solutions-icon" onclick="showSolutionTop('diving')">
-                <p>Diving</p>
+                <p class="fontimpact">Diving</p>
               </div>
               <div class="solutions-icon" onclick="showSolutionTop('safety')">
-                <p>Safety</p>
+                <p class="fontimpact">Safety</p>
               </div>
             </div>
             <div class="solutions-main" id="solution-fishing">
-              <h2>Fishing</h2>
+              <h2 class="fontimpact">Fishing</h2>
               <p>What are the solutions to this problem?</p>
               <p>
                 The main solution for the uni overgrowth is actually just eating them. Although a solution can be
@@ -236,13 +263,13 @@
                 Giant Giant Kelp Restoration Project (g2kr) and supporting Divers from Reef Check California can involve
                 those who don't want to or can't participate with uni harvesting.
               </p>
-              <button onclick="window.location.href='https://diving.org'">Visit Diving.org</button>
+              <button onclick="window.location.href='https://fishing.org'">Visit Fishing.org</button>
               <div class="solutions-image">
                 <img src="images/unifishing.jpg" alt="Fishing for uni" />
               </div>
             </div>
             <div class="solutions-main" id="solution-predators" hidden>
-              <h2>Predators</h2>
+              <h2 class="fontimpact">Predators</h2>
               <p>What are the solutions to this problem?</p>
               <p>
                 The main solution for the uni overgrowth is actually just eating them. Although a solution can be
@@ -251,7 +278,7 @@
                 Giant Giant Kelp Restoration Project (g2kr) and supporting Divers from Reef Check California can involve
                 those who don't want to or can't participate with uni harvesting.
               </p>
-              <button onclick="window.location.href='https://diving.org'">Visit Diving.org</button>
+              <button onclick="window.location.href='https://predators.org'">Visit Predators.org</button>
               <div class="solutions-image">
                 <img src="images/unipredator.jpg" alt="Sea otter" />
               </div>
@@ -259,26 +286,26 @@
 
             <div class="solutions-main solutions-diving" id="solution-diving" hidden>
               <div>
-              <h2>Diving</h2>
-              <p>What are the solutions to this problem?</p>
-              <p>
-                The main solution for the uni overgrowth is actually just eating them. Although a solution can be
+                <h2 class="fontimpact">Diving</h2>
+                <p>What are the solutions to this problem?</p>
+                <p>
+                  The main solution for the uni overgrowth is actually just eating them. Although a solution can be
                   introducing predators, raising awareness about sea urchins and encouraging locals in the area to
                   harvest uni themselves would help reduce the uni numbers significantly. Donating money to
                   organisations like Giant Giant Kelp Restoration Project (g2kr) and supporting Divers from Reef Check
                   California can involve those who don't want to or can't participate with uni harvesting.
-              </p>
-              <button onclick="window.location.href='https://diving.org'">Visit Diving.org</button>
+                </p>
+                <button onclick="window.location.href='https://diving.org'">Visit Diving.org</button>
               </div>
               <div>
                 <div class="solutions-image-diving">
-                <img src="images/unidiving.jpg" alt="One guy diving for uni" />
+                  <img src="images/unidiving.jpg" alt="One guy diving for uni" />
                 </div>
               </div>
             </div>
 
             <div class="solutions-main" id="solution-safety" hidden>
-              <h2>Safety</h2>
+              <h2 class="fontimpact">Safety</h2>
               <p>What are the solutions to this problem?</p>
               <p>
                 The main solution for the uni overgrowth is actually just eating them. Although a solution can be
@@ -287,15 +314,29 @@
                 Giant Giant Kelp Restoration Project (g2kr) and supporting Divers from Reef Check California can involve
                 those who don't want to or can't participate with uni harvesting.
               </p>
-              <button onclick="window.location.href='https://diving.org'">Visit Diving.org</button>
+              <button onclick="window.location.href='https://safety.org'">Visit Safety.org</button>
               <div class="solutions-image">
                 <img src="images/unisafety.jpg" alt="Uni diving equipment" />
               </div>
             </div>
           </div>
           <div class="solutions-container-right">
+            <div class="solutions-columns solutions-columns-top">
+              <div class="solutions-icon" onclick="showSolutionBottom('catch')">
+                <p class="fontimpact">Catch & Cook</p>
+              </div>
+              <div class="solutions-icon" onclick="showSolutionBottom('recipes')">
+                <p class="fontimpact">Recipes</p>
+              </div>
+              <div class="solutions-icon" onclick="showSolutionBottom('processing')">
+                <p class="fontimpact">Processing</p>
+              </div>
+              <div class="solutions-icon" onclick="showSolutionBottom('youtube')">
+                <p class="fontimpact">Youtube</p>
+              </div>
+            </div>
             <div class="solutions-main-bottom" id="solution-catch">
-              <h2>Catch & Cook</h2>
+              <h2 class="fontimpact">Catch & Cook</h2>
               <p>What are the solutions to this problem?</p>
               <p>
                 The main solution for the uni overgrowth is actually just eating them. Although a solution can be
@@ -304,13 +345,13 @@
                 Giant Giant Kelp Restoration Project (g2kr) and supporting Divers from Reef Check California can involve
                 those who don't want to or can't participate with uni harvesting.
               </p>
-              <button onclick="window.location.href='https://diving.org'">Visit Diving.org</button>
+              <button onclick="window.location.href='https://catchcook.com'">Visit Catchcook.com</button>
               <div class="solutions-image">
                 <img src="images/unicatchandcook.jpg" alt="Catch and Cook" />
               </div>
             </div>
             <div class="solutions-main-bottom" id="solution-recipes" hidden>
-              <h2>Recipes</h2>
+              <h2 class="fontimpact">Recipes</h2>
               <p>What are the solutions to this problem?</p>
               <p>
                 The main solution for the uni overgrowth is actually just eating them. Although a solution can be
@@ -319,14 +360,14 @@
                 Giant Giant Kelp Restoration Project (g2kr) and supporting Divers from Reef Check California can involve
                 those who don't want to or can't participate with uni harvesting.
               </p>
-              <button onclick="window.location.href='https://diving.org'">Visit Diving.org</button>
+              <button onclick="window.location.href='https://recipes.com'">Visit Recipes.com</button>
               <div class="solutions-image">
                 <img src="images/unirecipe.jpg" alt="Uni recipes" />
               </div>
             </div>
 
             <div class="solutions-main-bottom" id="solution-processing" hidden>
-              <h2>Processing</h2>
+              <h2 class="fontimpact">Processing</h2>
               <p>What are the solutions to this problem?</p>
               <p>
                 The main solution for the uni overgrowth is actually just eating them. Although a solution can be
@@ -335,14 +376,14 @@
                 Giant Giant Kelp Restoration Project (g2kr) and supporting Divers from Reef Check California can involve
                 those who don't want to or can't participate with uni harvesting.
               </p>
-              <button onclick="window.location.href='https://diving.org'">Visit Diving.org</button>
+              <button onclick="window.location.href='https://process.com'">Visit Process.com</button>
               <div class="solutions-image">
                 <img src="images/uniprocessing.jpg" alt="Processing uni" />
               </div>
             </div>
 
             <div class="solutions-main-bottom" id="solution-youtube" hidden>
-              <h2>Youtube</h2>
+              <h2 class="fontimpact">Youtube</h2>
               <p>What are the solutions to this problem?</p>
               <p>
                 The main solution for the uni overgrowth is actually just eating them. Although a solution can be
@@ -351,23 +392,23 @@
                 Giant Giant Kelp Restoration Project (g2kr) and supporting Divers from Reef Check California can involve
                 those who don't want to or can't participate with uni harvesting.
               </p>
-              <button onclick="window.location.href='https://diving.org'">Visit Diving.org</button>
+              <button onclick="window.location.href='https://youtube.com'">Visit Youtube.com</button>
               <div class="solutions-image">
                 <img src="images/uniyoutube.jpg" alt="Outdoor Chef Life" />
               </div>
             </div>
-            <div class="solutions-columns">
+            <div class="solutions-columns solutions-columns-bottom">
               <div class="solutions-icon" onclick="showSolutionBottom('catch')">
-                <p>Catch & Cook</p>
+                <p class="fontimpact">Catch & Cook</p>
               </div>
               <div class="solutions-icon" onclick="showSolutionBottom('recipes')">
-                <p>Recipes</p>
+                <p class="fontimpact">Recipes</p>
               </div>
               <div class="solutions-icon" onclick="showSolutionBottom('processing')">
-                <p>Processing</p>
+                <p class="fontimpact">Processing</p>
               </div>
               <div class="solutions-icon" onclick="showSolutionBottom('youtube')">
-                <p>Youtube</p>
+                <p class="fontimpact">Youtube</p>
               </div>
             </div>
           </div>
@@ -375,9 +416,9 @@
       </section>
 
       <!-- Gallery Section -->
-      <section id="gallery" class="section">
-        <div class="content">
-          <h2>Image Gallery</h2>
+      <section id="gallery" class="section" style="padding-bottom: 0px">
+        <div class="content" style="z-index: 10">
+          <h2 class="fontimpact">Image Gallery</h2>
           <div class="gallery">
             <sl-carousel autoplay loop pagination class="carousel">
               <sl-carousel-item>
@@ -410,16 +451,19 @@
             </sl-carousel>
           </div>
         </div>
+        <div class="kelpbackground-container">
+          <img class="kelpbackground" src="images/kelpbackground.png" alt="kelp" />
+        </div>
       </section>
 
       <!-- Contact Section -->
-      <section id="contact" class="section">
+      <section id="contact" class="section" style="padding: 0px">
         <div class="content">
-          <h2>Take Action</h2>
+          <h2 class="fontimpact" style="position: relative; z-index: 2">Take Action</h2>
           <div class="contact-columns">
             <div class="contact-column">
-              <div class="contact-icon" onclick="toggleForm()">
-                <img src="https://via.placeholder.com/80" alt="Dining Icon" />
+              <div class="contact-icon">
+                <img src="images/cutlery.png" alt="Dining Icon" />
               </div>
               <p>
                 Eating the uni is the best way to regulate the overpopulation of uni on the south coast of California.
@@ -428,8 +472,8 @@
               </p>
             </div>
             <div class="contact-column">
-              <div class="contact-icon" onclick="toggleForm()">
-                <img src="https://via.placeholder.com/80" alt="Fishing Icon" />
+              <div class="contact-icon">
+                <img src="images/bucket.png" alt="Fishing Icon" />
               </div>
               <p>
                 Fishing for uni is easy and cost efficient. Grab a bucket and some gloves and head down to your local
@@ -438,8 +482,8 @@
               </p>
             </div>
             <div class="contact-column">
-              <div class="contact-icon" onclick="toggleForm()">
-                <img src="https://via.placeholder.com/80" alt="Donation Icon" />
+              <div class="contact-icon">
+                <img src="images/donate.png" alt="Donation Icon" />
               </div>
               <p>
                 To the wonderful divers that catch and deliver fresh uni to local restaurants: thank you for cleaning up
@@ -448,69 +492,35 @@
               </p>
             </div>
           </div>
-          <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required />
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-
-            <button type="submit">Send Message</button>
-          </form>
+        </div>
+        <div class="bubblebackground-container">
+          <img class="bubblebackground" src="images/bubblebackground.png" alt="bubble" />
         </div>
       </section>
       <!-- Footer Section -->
-        <div class="content">
-          <footer class="footer">
-            <div class="footer-image">
-              <img src="images/map.jpg" alt="Kelp Forest Map" />
-            </div>
-            <div class="footer-links">
-              <ul>
-                <li><a href="#find-creatures">Find The Sea Creatures</a></li>
-                <li><a href="#problem">The Problem</a></li>
-                <li><a href="#solution">The Solution</a></li>
-                <li><a href="#take-action">Take Action</a></li>
-                <li><a href="#learn-kelp">Learn More About The Kelp Forests</a></li>
-                <li><a href="#youtube-links">Youtube Links</a></li>
-                <li><a href="#donate">Donate</a></li>
-                <li><a href="#contact">Contact</a></li>
-              </ul>
-            </div>
-            <div class="footer-brand">
-              <p>HELP THE KELP</p>
-            </div>
-          </footer>
-        </div>
+      <div class="content">
+        <footer class="footer">
+          <div class="footer-image">
+            <img src="images/map.jpg" alt="Kelp Forest Map" />
+          </div>
+          <div class="footer-links">
+            <ul>
+              <li><a class="fontimpact" href="#find-creatures">Find The Sea Creatures</a></li>
+              <li><a class="fontimpact" href="#problem">The Problem</a></li>
+              <li><a class="fontimpact" href="#solution">The Solution</a></li>
+              <li><a class="fontimpact" href="#take-action">Take Action</a></li>
+              <li><a class="fontimpact" href="#learn-kelp">Learn More About The Kelp Forests</a></li>
+              <li><a class="fontimpact" href="#youtube-links">Youtube Links</a></li>
+              <li><a class="fontimpact" href="#donate">Donate</a></li>
+              <li><a class="fontimpact" href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-brand">
+            <p class="fontimpact">HELP THE KELP</p>
+          </div>
+        </footer>
+      </div>
     </div>
-
-    <script>
-      function toggleForm() {
-        const form = document.getElementById("contact-form");
-        form.classList.toggle("active");
-      }
-
-      function showSolutionTop(type) {
-        const all = document.getElementsByClassName("solutions-main");
-        Array.from(all).forEach((element) => {
-          element.hidden = true;
-        });
-        const thing = document.getElementById(`solution-${type}`);
-        thing.hidden = false;
-      }
-
-      function showSolutionBottom(type) {
-        const all = document.getElementsByClassName("solutions-main-bottom");
-        Array.from(all).forEach((element) => {
-          element.hidden = true;
-        });
-        const thing = document.getElementById(`solution-${type}`);
-        thing.hidden = false;
-      }
-    </script>
     <script src="main.js"></script>
   </body>
 </html>

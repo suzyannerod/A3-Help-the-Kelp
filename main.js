@@ -6,71 +6,6 @@ function showAll() {
   const everything = document.getElementById("everything");
   everything.hidden = false;
 
-  // creature moevement
-
-  // function floatBullKelp() {
-  //   const float = gsap.timeline({ repeat: -1, yoyo: true });
-  //   float
-  //move top left
-  // .to(".bullkelp", 3, { y: "-=30", x: "+=20", rotation: "-=5", ease: Power1.easeInOut })
-
-  // //move down right
-  // .to(".bullkelp", 2, { y: "+=30", x: "-=20", rotation: "-=5", ease: Power1.easeInOut })
-
-  // .to(".bullkelp", 3, { y: "-=20", rotation: "+=5", ease: Power1.easeInOut })
-
-  // .to(".bullkelp", 3, { y: "+=20", rotation: "+=5", ease: Power1.easeInOut })
-
-  //     .to(".bullkelp", 3, { y: "-=50", ease: Power1.easeInOut })
-  //     .to(".bullkelp", 3, { y: "+=50", ease: Power1.easeInOut })
-  //     .to(".bullkelp", 3, { y: "-=30", ease: Power1.easeInOut })
-  //     .to(".bullkelp", 3, { y: "+=30", ease: Power1.easeInOut })
-  //     .to(".bullkelp", 2, { y: "-=30", ease: Power1.easeInOut })
-  //     .to(".bullkelp", 2, { y: "+=30", ease: Power1.easeInOut });
-
-  //   // TweenLite.to(float, 27, { ease: Power1.easeInOut });
-  // }
-  // floatBullKelp();
-
-  // function floatStick() {
-  //   const float = gsap.timeline({ repeat: -1, yoyo: true });
-  //   float
-  //     .to(".stick", 3, { y: "-=15", ease: Power1.easeInOut })
-  //     .to(".stick", 3, { y: "+=15", ease: Power1.easeInOut })
-  //     .to(".stick", 3, { y: "-=10", ease: Power1.easeInOut })
-  //     .to(".stick", 3, { y: "+=10", ease: Power1.easeInOut })
-  //     .to(".stick", 2, { y: "-=10", ease: Power1.easeInOut })
-  //     .to(".stick", 2, { y: "+=10", ease: Power1.easeInOut });
-  // }
-  // floatStick();
-
-  // function floatStick2() {
-  //   const float = gsap.timeline({ repeat: -1, yoyo: true });
-  //   float
-  //     .to(".stick2", 3, { y: "-=15", ease: Power1.easeInOut })
-  //     .to(".stick2", 3, { y: "+=15", ease: Power1.easeInOut })
-  //     .to(".stick2", 3, { y: "-=10", ease: Power1.easeInOut })
-  //     .to(".stick2", 3, { y: "+=10", ease: Power1.easeInOut })
-  //     .to(".stick2", 2, { y: "-=10", ease: Power1.easeInOut })
-  //     .to(".stick2", 2, { y: "+=10", ease: Power1.easeInOut });
-  // }
-  // floatStick2();
-
-  // function floatOtter() {
-  //   const float = gsap.timeline({ repeat: -1, yoyo: true });
-  //   float
-  //     .to(".otter", 3, { y: "-=25", ease: Power1.easeInOut })
-  //     .to(".otter", 3, { y: "+=25", ease: Power1.easeInOut })
-  //     .to(".otter", 3, { y: "-=15", ease: Power1.easeInOut })
-  //     .to(".otter", 3, { y: "+=15", ease: Power1.easeInOut })
-  //     .to(".otter", 2, { y: "-=15", ease: Power1.easeInOut })
-  //     .to(".otter", 2, { y: "+=15", ease: Power1.easeInOut });
-  // }
-  // floatOtter();
-
-  // Function for vertical float animation (for bullkelp)
-  // same stuff written above but neater
-
   function floatVertical(target, yMovements) {
     const float = gsap.timeline({ repeat: -1, yoyo: true });
 
@@ -148,67 +83,53 @@ function showAll() {
     .to(".bubbles", 3, { y: "-=1500", ease: Power1.easeInOut });
 }
 
-//loading page// 
+//loading page//
 const loadPercent = document.getElementById("load-percent");
 function incrementLoad() {
-  // reverse later
-
-  // const current = parseInt(loadPercent.textContent);
-  // loadPercent.textContent = current + 2;
-  // if (current + 2 < 100) {
-  //   setTimeout(incrementLoad, 28);
-  // } else {
-  //   setTimeout(showAll, 300);
-  // }
-  showAll();
+  const current = parseInt(loadPercent.textContent);
+  loadPercent.textContent = current + 2;
+  if (current + 2 < 100) {
+    setTimeout(incrementLoad, 28);
+  } else {
+    setTimeout(showAll, 300);
+  }
+  // showAll();
 }
 incrementLoad();
 
-// Toggle Contact Form Visibility
-document.querySelectorAll(".contact-icon").forEach((icon) => {
-  icon.addEventListener("click", () => {
-    const form = document.getElementById("contact-form");
-    form.classList.toggle("active");
-    scrollToForm(form);
+function showSolutionTop(type) {
+  const all = document.getElementsByClassName("solutions-main");
+  Array.from(all).forEach((element) => {
+    element.hidden = true;
   });
-});
-
-// Smooth Scroll to Contact Form
-function scrollToForm(form) {
-  form.scrollIntoView({
-    behavior: "smooth",
-  });
+  const thing = document.getElementById(`solution-${type}`);
+  thing.hidden = false;
 }
 
-// Contact Form Submission
-const contactForm = document.getElementById("contact-form");
-contactForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  // Basic form validation and alert for demonstration purposes
-  alert("Thank you for your message! We will get back to you soon.");
-  contactForm.reset();
-  contactForm.classList.remove("active");
-});
-
-//pop up//
-
-// popup1 = document.getElementById("popup1");
-// popupbutton1 = document.getElementById("popupbutton1");
-// popupbutton1.addEventListener("click", () => {
-//   popup1.active = !popup1.active;
-// });
-
-// document.addEventListener("DOMContentLoaded", (event) => {
-//   gsap.registerPlugin(ScrollTrigger);
-// });
+function showSolutionBottom(type) {
+  const all = document.getElementsByClassName("solutions-main-bottom");
+  Array.from(all).forEach((element) => {
+    element.hidden = true;
+  });
+  const thing = document.getElementById(`solution-${type}`);
+  thing.hidden = false;
+}
 
 // pop up toggle
+let audio = new Audio("audio/bubble.mp3");
+
+function playAudio() {
+  audio.pause();
+  audio.currentTime = 0;
+  audio.play();
+}
 //kelp button
 const popupkelp = document.getElementById("popupkelp");
 const popupbuttonkelp = document.getElementById("popupbuttonkelp");
 const indicatorkelp = document.getElementById("indicatorkelp");
 
 popupbuttonkelp.addEventListener("click", () => {
+  playAudio();
   popupkelp.active = !popupkelp.active;
 
   let color = getComputedStyle(popupbuttonkelp).getPropertyValue("color");
@@ -225,6 +146,7 @@ const popupbuttonotter = document.getElementById("popupbuttonotter");
 const indicatorotter = document.getElementById("indicatorotter");
 
 popupbuttonotter.addEventListener("click", () => {
+  playAudio();
   popupotter.active = !popupotter.active;
 
   let color = getComputedStyle(popupbuttonotter).getPropertyValue("color");
@@ -240,6 +162,7 @@ const popupbuttonuni = document.getElementById("popupbuttonuni");
 const indicatoruni = document.getElementById("indicatoruni");
 
 popupbuttonuni.addEventListener("click", () => {
+  playAudio();
   popupuni.active = !popupuni.active;
 
   let color = getComputedStyle(popupbuttonuni).getPropertyValue("color");
@@ -255,6 +178,7 @@ const popupbuttonstarfish = document.getElementById("popupbuttonstarfish");
 const indicatorstarfish = document.getElementById("indicatorstarfish");
 
 popupbuttonstarfish.addEventListener("click", () => {
+  playAudio();
   popupstarfish.active = !popupstarfish.active;
 
   let color = getComputedStyle(popupbuttonstarfish).getPropertyValue("color");
@@ -263,6 +187,13 @@ popupbuttonstarfish.addEventListener("click", () => {
   popupbuttonstarfish.style.backgroundColor = color;
   popupbuttonstarfish.style.color = backgroundColor;
   indicatorstarfish.style.backgroundColor = backgroundColor;
+});
+
+const hamburgerPopup = document.getElementById("hamburger-popup");
+const hamburgerButton = document.getElementById("hamburger-btn");
+hamburgerButton.addEventListener("click", () => {
+  playAudio();
+  hamburgerPopup.active = !hamburgerPopup.active;
 });
 
 document.addEventListener("DOMContentLoaded", (event) => {
